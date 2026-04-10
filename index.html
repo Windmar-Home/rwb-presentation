@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red White & Boricua — Marketing Campaign</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark: #0A0A12;
+  --red: #C41E3A;
+  --blue: #1E3A5F;
+  --white: #FFFFFF;
+  --cream: #F5F0E8;
+  --gold: #D4A853;
+  --gray: #8B8B8B;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 48px;
+  background: linear-gradient(to bottom, rgba(10,10,18,0.95), transparent);
+}
+nav .logo { font-family: 'Fraunces', serif; font-size: 18px; letter-spacing: 3px; color: var(--cream); }
+nav .tag { font-size: 11px; letter-spacing: 2px; color: var(--red); text-transform: uppercase; }
+
+/* SLIDES */
+section {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 100px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-num {
+  position: absolute; top: 100px; right: 48px;
+  font-size: 11px; letter-spacing: 3px; color: var(--gray);
+}
+
+/* HERO */
+#s1 {
+  background: var(--dark);
+  text-align: center;
+  flex-direction: column;
+}
+#s1::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(196,30,58,0.15) 0%, transparent 70%);
+}
+#s1 .flag-stripe {
+  display: flex; gap: 6px; margin-bottom: 48px; justify-content: center;
+}
+#s1 .flag-stripe span {
+  width: 60px; height: 4px; border-radius: 2px;
+}
+.s-red { background: var(--red); }
+.s-white { background: var(--white); }
+.s-blue { background: var(--blue); }
+
+#s1 h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(56px, 8vw, 112px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -2px;
+}
+#s1 h1 .red { color: var(--red); }
+#s1 h1 .amp { color: var(--gold); font-style: italic; }
+#s1 .subtitle {
+  margin-top: 24px;
+  font-size: 14px; letter-spacing: 4px; color: var(--gray); text-transform: uppercase;
+}
+#s1 .tagline {
+  margin-top: 48px;
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-size: clamp(20px, 3vw, 32px); color: var(--cream);
+}
+#s1 .meta {
+  margin-top: 48px; display: flex; gap: 48px; justify-content: center;
+}
+#s1 .meta-item { text-align: center; }
+#s1 .meta-num {
+  font-family: 'Fraunces', serif; font-size: 48px; font-weight: 900; color: var(--red);
+}
+#s1 .meta-label { font-size: 11px; letter-spacing: 2px; color: var(--gray); text-transform: uppercase; margin-top: 4px; }
+
+/* SECTION HEADERS */
+.slide-header {
+  max-width: 1100px; width: 100%;
+}
+.eyebrow {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--red); margin-bottom: 16px;
+}
+.slide-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 700; line-height: 1.05;
+  color: var(--cream);
+}
+.divider {
+  width: 60px; height: 3px; background: var(--red);
+  margin: 32px 0;
+}
+
+/* TWO COL */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+.four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 32px;
+}
+.card.accent { border-left: 3px solid var(--red); }
+.card h3 {
+  font-family: 'Fraunces', serif; font-size: 22px;
+  color: var(--cream); margin-bottom: 12px;
+}
+.card p { font-size: 15px; line-height: 1.7; color: var(--gray); }
+.card .tag-pill {
+  display: inline-block; padding: 4px 12px; border-radius: 20px;
+  background: rgba(196,30,58,0.15); border: 1px solid rgba(196,30,58,0.3);
+  font-size: 11px; letter-spacing: 2px; color: var(--red);
+  text-transform: uppercase; margin-bottom: 16px;
+}
+
+/* BIG QUOTE */
+.big-quote {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-size: clamp(36px, 5vw, 72px); font-weight: 700;
+  line-height: 1.1; color: var(--cream);
+}
+.big-quote .highlight { color: var(--red); }
+
+/* PILLS */
+.pill-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.pill {
+  padding: 8px 20px; border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.15);
+  font-size: 13px; color: var(--cream); letter-spacing: 1px;
+}
+.pill.red { border-color: var(--red); color: var(--red); background: rgba(196,30,58,0.1); }
+
+/* TABLE */
+.table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+.table th {
+  text-align: left; padding: 12px 16px;
+  font-size: 11px; letter-spacing: 2px; color: var(--red);
+  text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.table td {
+  padding: 16px; font-size: 14px; color: var(--cream);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.table tr:hover td { background: rgba(255,255,255,0.03); }
+
+/* TIMELINE */
+.timeline { position: relative; }
+.timeline::before {
+  content: ''; position: absolute; left: 16px; top: 0; bottom: 0;
+  width: 2px; background: rgba(196,30,58,0.3);
+}
+.tl-item { display: flex; gap: 32px; padding: 24px 0; }
+.tl-dot {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--dark); border: 2px solid var(--red);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; z-index: 1;
+  font-size: 11px; font-weight: 600; color: var(--red);
+}
+.tl-content h4 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--cream); margin-bottom: 8px; }
+.tl-content p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+
+/* STREAMER LIST */
+.streamer-item {
+  display: flex; align-items: flex-start; gap: 20px;
+  padding: 20px; border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 12px;
+}
+.s-tier {
+  font-size: 10px; letter-spacing: 2px; font-weight: 600;
+  padding: 4px 10px; border-radius: 20px; flex-shrink: 0;
+  text-transform: uppercase;
+}
+.tier-1 { background: rgba(212,168,83,0.15); color: var(--gold); border: 1px solid rgba(212,168,83,0.3); }
+.tier-2 { background: rgba(196,30,58,0.15); color: var(--red); border: 1px solid rgba(196,30,58,0.3); }
+.s-name { font-family: 'Fraunces', serif; font-size: 20px; color: var(--cream); }
+.s-pitch { font-size: 13px; color: var(--gray); margin-top: 4px; line-height: 1.5; }
+.s-deal { font-size: 12px; color: var(--gold); margin-top: 6px; }
+
+/* STAT BIG */
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.stat-box { text-align: center; padding: 40px 24px; border-radius: 12px; background: rgba(255,255,255,0.04); }
+.stat-num { font-family: 'Fraunces', serif; font-size: 64px; font-weight: 900; color: var(--red); line-height: 1; }
+.stat-label { font-size: 13px; letter-spacing: 2px; color: var(--gray); text-transform: uppercase; margin-top: 8px; }
+
+/* POST PREVIEW */
+.post-card {
+  border-radius: 12px; overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.post-header {
+  padding: 16px 20px; background: rgba(255,255,255,0.05);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.post-platform { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); }
+.post-body { padding: 20px; font-size: 14px; line-height: 1.7; color: var(--cream); }
+.post-tags { font-size: 12px; color: var(--blue); margin-top: 8px; }
+
+/* FOOTER SLIDE */
+#s19 {
+  background: linear-gradient(135deg, var(--dark) 0%, #12021A 100%);
+  text-align: center; flex-direction: column;
+}
+#s19::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(196,30,58,0.1), transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(30,58,95,0.15), transparent 60%);
+}
+#s19 h2 { font-family: 'Fraunces', serif; font-size: clamp(48px, 6vw, 96px); font-weight: 900; color: var(--cream); }
+#s19 .sub { font-size: 18px; color: var(--gray); margin-top: 16px; }
+#s19 .credits {
+  margin-top: 80px; padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 12px; letter-spacing: 2px; color: var(--gray);
+}
+
+/* DARK ALT */
+.dark-alt { background: rgba(30,58,95,0.15); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  section { padding: 80px 24px 60px; }
+  .two-col, .three-col, .four-col { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">RED WHITE & BORICUA</span>
+  <span class="tag">Marketing Strategy 2026</span>
+</nav>
+
+<!-- SLIDE 1: HERO -->
+<section id="s1">
+  <div class="flag-stripe">
+    <span class="s-red"></span><span class="s-white"></span><span class="s-blue"></span>
+    <span class="s-red"></span><span class="s-white"></span><span class="s-blue"></span>
+    <span class="s-red"></span>
+  </div>
+  <h1>
+    RED<br>
+    <span class="red">WHITE</span><br>
+    <span class="amp">&</span> BORICUA
+  </h1>
+  <p class="subtitle">Impacting America — Marketing Campaign 2026</p>
+  <p class="tagline">"Criollo Chic & Sexy"</p>
+  <div class="meta">
+    <div class="meta-item"><div class="meta-num">4</div><div class="meta-label">Episodes</div></div>
+    <div class="meta-item"><div class="meta-num">37</div><div class="meta-label">Interviews</div></div>
+    <div class="meta-item"><div class="meta-num">3</div><div class="meta-label">Week Launch</div></div>
+  </div>
+</section>
+
+<!-- SLIDE 2: WHAT IS THIS -->
+<section id="s2">
+  <span class="slide-num">02 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">The Project</p>
+    <h2>A cinematic statement<br>about Puerto Rican identity</h2>
+    <div class="divider"></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:18px;line-height:1.8;color:var(--cream)">
+          <em>Red White & Boricua</em> — officially titled <strong>Impacting America: Red White and Boricua</strong> on IMDb — is a 4-episode documentary series with 37 interviews spanning NASA scientists, celebrity chefs, politicians, actors, and cultural icons.
+        </p>
+        <p style="margin-top:20px;font-size:15px;color:var(--gray);line-height:1.7">
+          This is not a travel documentary. It's a cinematic exploration of Puerto Rican contributions to America — raw, complex, and cinematically elevated. Production: Peanut Gallery Group + Nacelle Company. Fiscal Sponsor: Film Independent 501(c)(3).
+        </p>
+      </div>
+      <div>
+        <div class="card accent">
+          <div class="tag-pill">NOT This</div>
+          <p style="color:var(--gray)">❌ Tourism or travel show<br>❌ Miami Vice aesthetics<br>❌ Postcard Puerto Rico<br>❌ Low-budget indie docs<br>❌ Pacific island tropical</p>
+        </div>
+        <div class="card accent" style="margin-top:16px">
+          <div class="tag-pill">This</div>
+          <p style="color:var(--cream)">✓ Movie-quality cinematics<br>✓ Raw, authentic Caribbean<br>✓ Criollo Chic & Sexy<br>✓ Cultural depth + impact<br>✓ Festival-ready prestige</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: BRAND POSITIONING -->
+<section id="s3" style="background:rgba(196,30,58,0.05)">
+  <span class="slide-num">03 / 19</span>
+  <div style="max-width:1100px;width:100%;text-align:center">
+    <p class="eyebrow">Brand Positioning</p>
+    <div class="big-quote">
+      "<span class="highlight">Criollo Chic</span><br>& Sexy"
+    </div>
+    <p style="margin-top:32px;font-size:18px;color:var(--gray);max-width:700px;margin-left:auto;margin-right:auto;line-height:1.7">
+      Born organically in the creative briefing. The intersection of authenticity and aspiration — unapologetically Puerto Rican, cinematically elevated, culturally grounded.
+    </p>
+    <div class="pill-group" style="justify-content:center;margin-top:40px">
+      <span class="pill red">#RedWhiteAndBoricua</span>
+      <span class="pill red">#CriolloChic</span>
+      <span class="pill red">#ImpactingAmerica</span>
+      <span class="pill">#BoricuaStories</span>
+      <span class="pill">#RedWhiteBoricua</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: VISUAL IDENTITY -->
+<section id="s4">
+  <span class="slide-num">04 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Visual Identity</p>
+    <h2>Cinematic. Caribbean.<br>Not a postcard.</h2>
+    <div class="divider"></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:32px">
+          The color palette was derived from studying MTV-era Caribbean aesthetics — bright and tropical, but <em>crudo</em>. Serious cinematic depth, not cheesy resort vibes.
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div style="text-align:center">
+            <div style="width:80px;height:80px;border-radius:10px;background:#0A0A12;border:1px solid rgba(255,255,255,0.2)"></div>
+            <p style="font-size:11px;color:var(--gray);margin-top:8px">#0A0A12<br>Dark</p>
+          </div>
+          <div style="text-align:center">
+            <div style="width:80px;height:80px;border-radius:10px;background:#C41E3A"></div>
+            <p style="font-size:11px;color:var(--gray);margin-top:8px">#C41E3A<br>Red</p>
+          </div>
+          <div style="text-align:center">
+            <div style="width:80px;height:80px;border-radius:10px;background:#1E3A5F"></div>
+            <p style="font-size:11px;color:var(--gray);margin-top:8px">#1E3A5F<br>Blue</p>
+          </div>
+          <div style="text-align:center">
+            <div style="width:80px;height:80px;border-radius:10px;background:#D4A853"></div>
+            <p style="font-size:11px;color:var(--gray);margin-top:8px">#D4A853<br>Gold</p>
+          </div>
+          <div style="text-align:center">
+            <div style="width:80px;height:80px;border-radius:10px;background:#F5F0E8;border:1px solid rgba(255,255,255,0.1)"></div>
+            <p style="font-size:11px;color:var(--gray);margin-top:8px">#F5F0E8<br>Cream</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h3>Typography</h3>
+          <p style="margin-bottom:16px;color:var(--gray)">Two typefaces. Zero compromise.</p>
+          <p style="font-family:'Fraunces',serif;font-size:32px;color:var(--cream)">Fraunces</p>
+          <p style="font-size:13px;color:var(--gray);margin-bottom:20px">Titles, headlines, quotes — cinematic weight</p>
+          <p style="font-size:20px;color:var(--cream)">DM Sans</p>
+          <p style="font-size:13px;color:var(--gray)">Body copy, captions, data — clean legibility</p>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>Assets Needed</h3>
+          <p style="color:var(--gray);font-size:14px;line-height:1.8">
+            □ Logo variations (light, dark, color, B&W)<br>
+            □ Brand guidelines PDF (Ian + Sergio)<br>
+            □ Dropbox access for Felipe + Ryan<br>
+            □ Mood board / visual references confirmed
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: CONTENT PILLARS -->
+<section id="s5" style="background:rgba(30,58,95,0.1)">
+  <span class="slide-num">05 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Content Strategy</p>
+    <h2>5 pillars. One story.</h2>
+    <div class="divider"></div>
+    <div class="three-col" style="margin-top:40px">
+      <div class="card accent">
+        <div class="tag-pill">Pilar 1</div>
+        <h3>Cinematic PR</h3>
+        <p>El mundo visual de la isla como nunca lo has visto. Color cinematográfico, paisajes y gente auténtica. El gancho: "Esto no es lo que conoces de Puerto Rico."</p>
+      </div>
+      <div class="card accent">
+        <div class="tag-pill">Pilar 2</div>
+        <h3>Criollo Chic</h3>
+        <p>La intersección de lo criollo con lo aspiracional. Música, arte, gastronomía, gente. No turístico, no cliché. Auténtico Puerto Rico con clase.</p>
+      </div>
+      <div class="card accent">
+        <div class="tag-pill">Pilar 3</div>
+        <h3>Behind The Scenes</h3>
+        <p>El making of — la historia detrás de la historia. Humaniza la marca y construye anticipación. Detrás de cámara, decisiones creativas, el equipo.</p>
+      </div>
+    </div>
+    <div class="two-col" style="margin-top:24px">
+      <div class="card accent">
+        <div class="tag-pill">Pilar 4</div>
+        <h3>Sound Bites & Moments</h3>
+        <p>Los momentos que te dejan pensando. Clips cortos de las mejores frases, reacciones, revelaciones del show. Diseñados para viralizarse.</p>
+      </div>
+      <div class="card accent">
+        <div class="tag-pill">Pilar 5</div>
+        <h3>Impact Stories</h3>
+        <p>El impacto real de la historia. Conexión emocional con la audiencia de PR y la diáspora. Por qué esto importa más allá del entretenimiento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: NAME VARIATIONS -->
+<section id="s6">
+  <span class="slide-num">06 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Brand Protection</p>
+    <h2>Own every<br>variation of the name.</h2>
+    <div class="divider"></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:16px;color:var(--gray);line-height:1.8;margin-bottom:32px">
+          Register and protect all name variations across social platforms, domains, and hashtags. As Miguel said in the briefing: "We distinguish ourselves — there's a lot between Winmark and Winkham."
+        </p>
+        <table class="table">
+          <tr><th>Variation</th><th>Context</th></tr>
+          <tr><td>Red White & Boricua</td><td>Primary brand</td></tr>
+          <tr><td>Red White y Boricua</td><td>Spanish contexts</td></tr>
+          <tr><td>Red White and Boricua</td><td>Formal English</td></tr>
+          <tr><td>Red White Boricua</td><td>Short / hashtag</td></tr>
+          <tr><td>Impacting America: Red White and Boricua</td><td>IMDb / press / festivals</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="card">
+          <h3>Hashtag Priority</h3>
+          <div class="pill-group">
+            <span class="pill red">#RedWhiteAndBoricua</span>
+            <span class="pill red">#RedWhiteBoricua</span>
+            <span class="pill red">#ImpactingAmerica</span>
+            <span class="pill red">#RedWhiteYBoricua</span>
+            <span class="pill">#CriolloChic</span>
+            <span class="pill">#BoricuaStories</span>
+            <span class="pill">#PuertoRico</span>
+          </div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>Platforms to Register</h3>
+          <p style="color:var(--gray);font-size:14px;line-height:1.8">
+            Instagram · Facebook · X/Twitter · TikTok · YouTube · LinkedIn · Threads
+          </p>
+          <p style="color:var(--red);font-size:13px;margin-top:12px">⚡ Register ALL this week (Week 1)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7: 3-WEEK PLAN -->
+<section id="s7" style="background:rgba(196,30,58,0.05)">
+  <span class="slide-num">07 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Launch Plan</p>
+    <h2>3 weeks.<br>From brief to launch.</h2>
+    <div class="divider"></div>
+    <div class="three-col" style="margin-top:40px">
+      <div class="card">
+        <div class="tag-pill">Week 1 · Apr 14-18</div>
+        <h3>Brand Foundation</h3>
+        <p style="color:var(--gray);font-size:14px;line-height:1.8">
+          Get all assets from Sevier/Ian. Register all social handles. Create Figma templates. Set up Wipster approval workflow. No public posts yet.
+        </p>
+        <p style="color:var(--red);font-size:13px;margin-top:16px;font-weight:600">Internal only</p>
+      </div>
+      <div class="card" style="border-color:rgba(196,30,58,0.3)">
+        <div class="tag-pill">Week 2 · Apr 21-25</div>
+        <h3>Content Production</h3>
+        <p style="color:var(--gray);font-size:14px;line-height:1.8">
+          Produce first content batch. BTS reel. Sound bites from teaser. Send to Wipster for Sevier approval. Prepare paid media structure.
+        </p>
+        <p style="color:var(--gold);font-size:13px;margin-top:16px;font-weight:600">Approval phase</p>
+      </div>
+      <div class="card" style="border-color:rgba(212,168,83,0.4)">
+        <div class="tag-pill" style="background:rgba(212,168,83,0.15);color:var(--gold);border-color:rgba(212,168,83,0.3)">Week 3 · Apr 28-May 2</div>
+        <h3>Launch 🚀</h3>
+        <p style="color:var(--gray);font-size:14px;line-height:1.8">
+          First public posts. Media outreach to Hollywood Reporter, Variety, Deadline. Meta Ads go live. Festival submission strategy activated.
+        </p>
+        <p style="color:var(--gold);font-size:13px;margin-top:16px;font-weight:600">Public launch</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 8: STREAMER STRATEGY -->
+<section id="s8">
+  <span class="slide-num">08 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Distribution Strategy</p>
+    <h2>Target the right<br>streamers with the right pitch.</h2>
+    <div class="divider"></div>
+    <div class="two-col">
+      <div>
+        <div class="streamer-item">
+          <div>
+            <span class="s-tier tier-1">TIER 1 — PRIMARY</span>
+            <div class="s-name">Netflix</div>
+            <div class="s-pitch">$1B+ in Latino content. Docs on Juan Gabriel, Canelo already in pipeline. "Impacting America is the format they're missing — not Mexico, not Colombia, it's the Puerto Rican diaspora IN the US."</div>
+            <div class="s-deal">$500K–$2M for 4 episodes with festival buzz</div>
+          </div>
+        </div>
+        <div class="streamer-item">
+          <div>
+            <span class="s-tier tier-1">TIER 1 — PREMIUM</span>
+            <div class="s-name">Apple TV+</div>
+            <div class="s-pitch">Shifting to quality docs. RWB's cinematic quality is Apple-level. Connection: Alec Roth (existing Sevier relationship). "This is not a YouTube doc — it's movie quality."</div>
+            <div class="s-deal">$1M–$3M (Apple pays premium for exclusivity)</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="streamer-item">
+          <div>
+            <span class="s-tier tier-2">TIER 2</span>
+            <div class="s-name">Lionsgate</div>
+            <div class="s-pitch">Direct connection through Sevier. Fastest path to deal — skip festival validation.</div>
+            <div class="s-deal">Best: fastest close</div>
+          </div>
+        </div>
+        <div class="streamer-item">
+          <div>
+            <span class="s-tier tier-2">TIER 2</span>
+            <div class="s-name">HBO / Max</div>
+            <div class="s-pitch">Home of prestige documentary. "This is more HBO than any other streamer." Risk: merger uncertainty.</div>
+            <div class="s-deal">Prestige play, longer timeline</div>
+          </div>
+        </div>
+        <div class="streamer-item">
+          <div>
+            <span class="s-tier tier-2">TIER 2</span>
+            <div class="s-name">Amazon Prime</div>
+            <div class="s-pitch">Amazon MGM active in festival acquisitions. Pitch "Impacting America" as franchise — each season a different nationality.</div>
+            <div class="s-deal">Mass market + franchise potential</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 9: FESTIVAL STRATEGY -->
+<section id="s9" style="background:rgba(30,58,95,0.1)">
+  <span class="slide-num">09 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Festival Circuit</p>
+    <h2>Film festivals are<br>the acquisition channel.</h2>
+    <div class="divider"></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:16px;color:var(--cream);line-height:1.8;margin-bottom:24px">Every major streamer has acquisition teams at festivals. A premiere at Tribeca or Sundance is not just prestige — it's the meeting that closes the deal.</p>
+        <table class="table">
+          <tr><th>Festival</th><th>Timeline</th><th>Why</th></tr>
+          <tr><td>Tribeca Film Festival</td><td>June 2026</td><td>NYC, Latino stories, Netflix scouts here</td></tr>
+          <tr><td>Sundance</td><td>Jan 2027</td><td>Biggest acquisitions. Apple, Netflix, Amazon all buying</td></tr>
+          <tr><td>LALIFF</td><td>2026</td><td>Latin audience, targeted community</td></tr>
+          <tr><td>DOC NYC</td><td>Nov 2026</td><td>Dedicated documentary festival, industry-heavy</td></tr>
+          <tr><td>SXSW</td><td>Mar 2027</td><td>Tech + culture crossover, streaming deals close here</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="card">
+          <h3>The FOMO Machine</h3>
+          <p style="color:var(--gray);font-size:14px;line-height:1.8;margin-bottom:20px">Create demand BEFORE the deal closes. The goal: make streamers feel they're missing out if they don't acquire RWB.</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="color:var(--red);font-size:20px;flex-shrink:0">→</span>
+              <p style="font-size:14px;color:var(--cream)">37 interview subjects posting about the film</p>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="color:var(--red);font-size:20px;flex-shrink:0">→</span>
+              <p style="font-size:14px;color:var(--cream)">Press coverage in entertainment outlets</p>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="color:var(--red);font-size:20px;flex-shrink:0">→</span>
+              <p style="font-size:14px;color:var(--cream)">Social proof before the pitch meeting</p>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="color:var(--red);font-size:20px;flex-shrink:0">→</span>
+              <p style="font-size:14px;color:var(--cream)">Buzz = negotiating leverage</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 10: APPROVAL WORKFLOW -->
+<section id="s10">
+  <span class="slide-num">10 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Content Operations</p>
+    <h2>Nothing posts<br>without Sevier's approval.</h2>
+    <div class="divider"></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:16px;color:var(--gray);line-height:1.8;margin-bottom:32px">The approval workflow is sacred. From Miguel's words in the briefing: <em>"We will not post without your approving."</em></p>
+        <div class="card accent">
+          <h3>Static Content (Figma)</h3>
+          <p style="color:var(--gray);font-size:14px;line-height:1.8">
+            1. WindMar team creates in Figma<br>
+            2. Share link to Sevier/Xavier<br>
+            3. Comments directly on the design<br>
+            4. Approved → publish<br>
+            5. Changes → revise and re-share
+          </p>
+        </div>
+        <div class="card accent" style="margin-top:16px">
+          <h3>Video Content (Wipster)</h3>
+          <p style="color:var(--gray);font-size:14px;line-height:1.8">
+            1. WindMar cuts video (Opus for clips)<br>
+            2. Upload to Wipster<br>
+            3. Sevier comments frame-by-frame<br>
+            4. Revise until approved<br>
+            5. Approved → publish
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="background:rgba(196,30,58,0.08);border-color:rgba(196,30,58,0.3)">
+          <h3 style="color:var(--red)">Team Roles</h3>
+          <table class="table">
+            <tr><th>Who</th><th>What</th></tr>
+            <tr><td>Felipe Arias</td><td>Creative direction, Figma templates</td></tr>
+            <tr><td>Daniela Lozano</td><td>Social media scheduling + community</td></tr>
+            <tr><td>Julian Barreto</td><td>Paid media — Meta Ads</td></tr>
+            <tr><td>Bryan Lopez</td><td>LinkedIn + press content</td></tr>
+            <tr><td>Laura Parra</td><td>Graphic design, visual assets</td></tr>
+            <tr><td>Miguel (Bolt)</td><td>Strategy, coordination, Sevier liaison</td></tr>
+          </table>
+          <p style="color:var(--red);font-size:13px;margin-top:16px">🔑 Sevier (Xavier) approves everything before publish</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 11: PAID MEDIA -->
+<section id="s11" style="background:rgba(196,30,58,0.05)">
+  <span class="slide-num">11 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Paid Media</p>
+    <h2>Meta Ads strategy<br>for maximum awareness.</h2>
+    <div class="divider"></div>
+    <div class="two-col">
+      <div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot">W1</div>
+            <div class="tl-content">
+              <h4>Campaign Setup</h4>
+              <p>Structure campaigns, set up pixel, create audiences. Budget: $0 (setup week).</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">W2</div>
+            <div class="tl-content">
+              <h4>Content Ready</h4>
+              <p>Load all approved creatives into Ads Manager. A/B test 3 variations per ad set. Budget: $0 (pre-launch).</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">W3</div>
+            <div class="tl-content">
+              <h4>Launch Ads</h4>
+              <p>Week 3 go live. Awareness + engagement campaigns. Budget: TBD with Sevier.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h3>Audience Strategy</h3>
+          <p style="color:var(--gray);font-size:14px;line-height:1.8;margin-bottom:16px">3 core audiences:</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="card" style="padding:16px">
+              <p style="font-size:13px;color:var(--red);font-weight:600;margin-bottom:4px">DIASPORA</p>
+              <p style="font-size:13px;color:var(--gray)">Puerto Rican heritage in US. NY, FL, PA, CT. Interest: Puerto Rico, Latin culture, social justice.</p>
+            </div>
+            <div class="card" style="padding:16px">
+              <p style="font-size:13px;color:var(--red);font-weight:600;margin-bottom:4px">ENTERTAINMENT INDUSTRY</p>
+              <p style="font-size:13px;color:var(--gray)">Lookalike of film industry pros. LinkedIn targeting for press/media outreach.</p>
+            </div>
+            <div class="card" style="padding:16px">
+              <p style="font-size:13px;color:var(--red);font-weight:600;margin-bottom:4px">DOCUMENTARY FANS</p>
+              <p style="font-size:13px;color:var(--gray)">Fans of Netflix docs, cultural documentaries, Latinx content. US + PR.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 12: SAMPLE POSTS -->
+<section id="s12">
+  <span class="slide-num">12 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Content Preview</p>
+    <h2>Launch posts —<br>ready to produce.</h2>
+    <div class="divider"></div>
+    <div class="three-col" style="margin-top:32px">
+      <div class="post-card">
+        <div class="post-header">
+          <span class="post-platform">Instagram · Launch Day</span>
+          <span style="font-size:11px;color:var(--gray)">Feed · 1:1</span>
+        </div>
+        <div class="post-body">
+          Hay una historia que Puerto Rico lleva años esperando.<br><br>
+          No es un tour. No es una postal. No es lo que ya viste mil veces.<br><br>
+          Red White & Boricua.<br>4 episodios. 37 entrevistas. Una isla. Un impacto.<br><br>
+          Muy pronto.
+          <div class="post-tags">#RedWhiteYBoricua #ImpactingAmerica #PuertoRico</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-header">
+          <span class="post-platform">LinkedIn · Industry</span>
+          <span style="font-size:11px;color:var(--gray)">Article · EN</span>
+        </div>
+        <div class="post-body">
+          Proud to announce WindMar Home AI Marketing is powering the launch of "Impacting America: Red White and Boricua."<br><br>
+          37 interviews. 4 episodes. One cinematic statement about Puerto Rican identity and contributions to America.<br><br>
+          This is what authentic Caribbean storytelling looks like.
+          <div class="post-tags">#ImpactingAmerica #Documentary #PuertoRico</div>
+        </div>
+      </div>
+      <div class="post-card">
+        <div class="post-header">
+          <span class="post-platform">X / Twitter · Entertainment</span>
+          <span style="font-size:11px;color:var(--gray)">Thread · EN</span>
+        </div>
+        <div class="post-body">
+          Dropping soon: a documentary that will change how the world sees Puerto Rico.<br><br>
+          "Impacting America: Red White & Boricua" — cinematic. authentic. criollo chic.<br><br>
+          37 interviews. From NASA to celebrity chefs to cultural icons. 🇵🇷🎬
+          <div class="post-tags">#RedWhiteBoricua #Documentary</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 13: MEDIA OUTREACH -->
+<section id="s13" style="background:rgba(30,58,95,0.1)">
+  <span class="slide-num">13 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Press Strategy</p>
+    <h2>Hollywood Reporter.<br>Variety. Deadline.</h2>
+    <div class="divider"></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:16px;color:var(--gray);line-height:1.8;margin-bottom:32px">
+          Entertainment press coverage before the festival circuit creates deal-room credibility. The pitch: <em>"Here's what people are saying about RWB before it even premieres."</em>
+        </p>
+        <div class="card accent">
+          <h3>The Pitch Angle</h3>
+          <p style="color:var(--gray);font-size:14px;line-height:1.8">
+            "A 4-episode documentary series featuring 37 interviews with Puerto Rican figures across science, entertainment, politics, and culture — produced with movie-quality cinematics and backed by Film Independent 501(c)(3)."
+          </p>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>Key Messages for Press</h3>
+          <p style="color:var(--gray);font-size:14px;line-height:1.8">
+            → First cinematic exploration of Puerto Rican contributions to America<br>
+            → 37 interviews: NASA, chefs, politicians, actors, cultural icons<br>
+            → "Impacting America" as potential franchise<br>
+            → Film Independent fiscal sponsor = awards credibility
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h3>Outreach Targets</h3>
+          <table class="table">
+            <tr><th>Outlet</th><th>Angle</th></tr>
+            <tr><td>Hollywood Reporter</td><td>Distribution + streaming deal story</td></tr>
+            <tr><td>Variety</td><td>Latino representation + cultural impact</td></tr>
+            <tr><td>Deadline</td><td>Festival circuit + acquisition buzz</td></tr>
+            <tr><td>Remezcla</td><td>Latino culture + community story</td></tr>
+            <tr><td>El Nuevo Día</td><td>Puerto Rico-focused coverage</td></tr>
+            <tr><td>Milenio (MX)</td><td>Pan-Latino market</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 14: KPIs -->
+<section id="s14">
+  <span class="slide-num">14 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Success Metrics</p>
+    <h2>How we measure<br>campaign success.</h2>
+    <div class="divider"></div>
+    <div class="stat-grid" style="margin-top:48px">
+      <div class="stat-box"><div class="stat-num">50K</div><div class="stat-label">Social Followers at Launch</div></div>
+      <div class="stat-box"><div class="stat-num">3+</div><div class="stat-label">Press Features by Week 3</div></div>
+      <div class="stat-box"><div class="stat-num">1M+</div><div class="stat-label">Impressions Month 1</div></div>
+      <div class="stat-box"><div class="stat-num">5%</div><div class="stat-label">Engagement Rate Target</div></div>
+      <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Festival Acceptance Q3</div></div>
+      <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Streamer Deal by Q4</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 15: WEEK 1 ACTIONS -->
+<section id="s15" style="background:rgba(196,30,58,0.05)">
+  <span class="slide-num">15 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Immediate Actions</p>
+    <h2>This week.<br>5 non-negotiable moves.</h2>
+    <div class="divider"></div>
+    <div class="timeline" style="max-width:700px;margin-top:40px">
+      <div class="tl-item">
+        <div class="tl-dot">1</div>
+        <div class="tl-content">
+          <h4>Request Brand Assets from Sevier/Ian</h4>
+          <p>Logos (all variations), color palette, brand guidelines. Dropbox access for Felipe + Ryan. TODAY.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2</div>
+        <div class="tl-content">
+          <h4>Register All Social Handles</h4>
+          <p>Daniela registers every name variation on IG, FB, X, TikTok, YouTube. Secure the namespace before launch.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">3</div>
+        <div class="tl-content">
+          <h4>Confirm Budget with Sevier</h4>
+          <p>Total monthly spend, in-house vs outsourced. Marketing budget was asked but not answered in the briefing. Close this gap.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">4</div>
+        <div class="tl-content">
+          <h4>Set Up Figma + Wipster</h4>
+          <p>Felipe creates the Figma workspace. Miguel sets up Wipster project. Approval pipeline ready before content starts flowing.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">5</div>
+        <div class="tl-content">
+          <h4>Connect with Alec Roth (Apple TV+)</h4>
+          <p>Sevier has the connection. Apple TV+ is the premium deal. Start the conversation now, close at a festival.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 16: THE TEAM -->
+<section id="s16">
+  <span class="slide-num">16 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">The Team</p>
+    <h2>WindMar Home<br>AI Marketing Agency</h2>
+    <div class="divider"></div>
+    <div class="four-col" style="margin-top:40px">
+      <div class="card" style="text-align:center">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(196,30,58,0.2);border:2px solid var(--red);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:24px">🎯</div>
+        <h3 style="font-size:18px">Miguel</h3>
+        <p style="font-size:13px;color:var(--red);margin-bottom:8px">Head of Growth</p>
+        <p style="font-size:13px;color:var(--gray)">Strategy · Sevier Liaison · AI Integration</p>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(30,58,95,0.3);border:2px solid var(--blue);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:24px">📊</div>
+        <h3 style="font-size:18px">Julian</h3>
+        <p style="font-size:13px;color:var(--blue);margin-bottom:8px">Paid Media</p>
+        <p style="font-size:13px;color:var(--gray)">Meta Ads · Analytics · Audience Targeting</p>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(212,168,83,0.15);border:2px solid var(--gold);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:24px">📱</div>
+        <h3 style="font-size:18px">Daniela</h3>
+        <p style="font-size:13px;color:var(--gold);margin-bottom:8px">Social Media</p>
+        <p style="font-size:13px;color:var(--gray)">IG · FB · TikTok · Community</p>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.05);border:2px solid rgba(255,255,255,0.2);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:24px">🎨</div>
+        <h3 style="font-size:18px">Felipe</h3>
+        <p style="font-size:13px;color:var(--gray);margin-bottom:8px">Creative Direction</p>
+        <p style="font-size:13px;color:var(--gray)">Figma · Brand · Visual Strategy</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:32px;background:rgba(10,10,18,0.8);border-color:rgba(196,30,58,0.2)">
+      <p style="font-size:15px;color:var(--gray);line-height:1.8;text-align:center">
+        <em>"We are a marketing agency led by artificial intelligence."</em> — Marc Roumain, briefing Apr 10 · 
+        Every post, clip, and asset runs through AI review before Sevier approval.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 17: FRANCHISE VISION -->
+<section id="s17" style="background:rgba(212,168,83,0.05)">
+  <span class="slide-num">17 / 19</span>
+  <div style="max-width:1100px;width:100%;text-align:center">
+    <p class="eyebrow">Long-Term Vision</p>
+    <div class="big-quote" style="font-size:clamp(32px,4vw,60px)">
+      "Impacting America"<br>
+      <span class="highlight">as a franchise.</span>
+    </div>
+    <p style="margin-top:32px;font-size:18px;color:var(--gray);max-width:700px;margin-left:auto;margin-right:auto;line-height:1.7">
+      Each season: a different diaspora community. Their contributions to America. Their impact. Their story. RWB is Season 1 — the Puerto Rican chapter.
+    </p>
+    <div class="three-col" style="margin-top:48px">
+      <div class="card" style="text-align:center">
+        <div style="font-family:'Fraunces',serif;font-size:32px;color:var(--red);margin-bottom:12px">S1</div>
+        <h3>Red White & Boricua</h3>
+        <p style="color:var(--gray);font-size:14px">Puerto Rico → America<br>2026</p>
+      </div>
+      <div class="card" style="text-align:center;opacity:0.5">
+        <div style="font-family:'Fraunces',serif;font-size:32px;color:var(--gold);margin-bottom:12px">S2</div>
+        <h3>TBD</h3>
+        <p style="color:var(--gray);font-size:14px">Next diaspora chapter<br>2027</p>
+      </div>
+      <div class="card" style="text-align:center;opacity:0.3">
+        <div style="font-family:'Fraunces',serif;font-size:32px;color:var(--blue);margin-bottom:12px">S3</div>
+        <h3>TBD</h3>
+        <p style="color:var(--gray);font-size:14px">The franchise grows<br>2028+</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 18: SUMMARY -->
+<section id="s18">
+  <span class="slide-num">18 / 19</span>
+  <div class="slide-header">
+    <p class="eyebrow">Summary</p>
+    <h2>The 3 vectors<br>that close the deal.</h2>
+    <div class="divider"></div>
+    <div class="three-col" style="margin-top:40px">
+      <div class="card accent" style="border-left-width:4px">
+        <div style="font-family:'Fraunces',serif;font-size:48px;color:var(--red);margin-bottom:16px">01</div>
+        <h3>Target Right, Pitch Right</h3>
+        <p>Netflix + Apple TV+ as Tier 1. Lionsgate as fastest path. Sevier's existing relationships as leverage. Festival circuit as the meeting room.</p>
+      </div>
+      <div class="card accent" style="border-left-width:4px">
+        <div style="font-family:'Fraunces',serif;font-size:48px;color:var(--red);margin-bottom:16px">02</div>
+        <h3>Build the FOMO Machine</h3>
+        <p>37 interview subjects posting. Press coverage before pitches. Social proof = negotiating power. Make them feel they're missing out.</p>
+      </div>
+      <div class="card accent" style="border-left-width:4px">
+        <div style="font-family:'Fraunces',serif;font-size:48px;color:var(--red);margin-bottom:16px">03</div>
+        <h3>3 Weeks to Launch</h3>
+        <p>Foundation → Production → Public Launch. Content calendar ready. Approval workflow set. Meta Ads live on Week 3. Deal conversations running in parallel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 19: CLOSING -->
+<section id="s19">
+  <span class="slide-num">19 / 19</span>
+  <h2>RED WHITE<br>& BORICUA</h2>
+  <p class="sub">Criollo Chic & Sexy — A story Puerto Rico has been waiting for.</p>
+  <div class="pill-group" style="justify-content:center;margin-top:40px">
+    <span class="pill red">#RedWhiteAndBoricua</span>
+    <span class="pill red">#ImpactingAmerica</span>
+    <span class="pill red">#CriolloChic</span>
+  </div>
+  <div class="credits">
+    WindMar Home AI Marketing Agency · Bolt ⚡ - Mickey OC · April 2026
+  </div>
+</section>
+
+</body>
+</html>
