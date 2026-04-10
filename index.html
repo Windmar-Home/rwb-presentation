@@ -252,21 +252,32 @@ section {
 /* DARK ALT */
 .dark-alt { background: rgba(30,58,95,0.15); }
 
-/* PUERTO RICO FLAG TEXT */
+/* PUERTO RICO FLAG TEXT — accurate horizontal stripes + blue triangle */
 .boricua-flag {
-  background: linear-gradient(
-    135deg,
-    #CE1126 0%, #CE1126 20%,
-    #FFFFFF 20%, #FFFFFF 35%,
-    #CE1126 35%, #CE1126 50%,
-    #FFFFFF 50%, #FFFFFF 65%,
-    #CE1126 65%, #CE1126 80%,
-    #0A6ED1 80%, #0A6ED1 100%
-  );
+  /* 5 horizontal red/white stripes with blue triangle overlay */
+  background: 
+    /* Blue left triangle: polygon from left side to center point */
+    linear-gradient(
+      to bottom right,
+      #0A6ED1 50%, transparent 50%
+    ) no-repeat left/38% 100%,
+    linear-gradient(
+      to top right,
+      #0A6ED1 50%, transparent 50%
+    ) no-repeat left/38% 100%,
+    /* 5 horizontal stripes */
+    repeating-linear-gradient(
+      180deg,
+      #CE1126 0%, #CE1126 20%,
+      #FFFFFF 20%, #FFFFFF 40%,
+      #CE1126 40%, #CE1126 60%,
+      #FFFFFF 60%, #FFFFFF 80%,
+      #CE1126 80%, #CE1126 100%
+    );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 2px 8px rgba(206,17,38,0.4));
+  filter: drop-shadow(0 2px 12px rgba(206,17,38,0.5));
 }
 
 /* RESPONSIVE */
