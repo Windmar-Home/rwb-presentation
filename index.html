@@ -7,13 +7,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --dark: #0A0A12;
-  --red: #C41E3A;
-  --blue: #1E3A5F;
-  --white: #FFFFFF;
-  --cream: #F5F0E8;
-  --gold: #D4A853;
-  --gray: #8B8B8B;
+  /* Bad Bunny "Debí Tirar Más Fotos" / Puerto Rico criollo palette */
+  --dark: #0E0B08;        /* earth dark - tierra quemada */
+  --red: #E8402A;         /* flamboyan orange-red */
+  --pink: #D4477A;        /* casita pink - magenta tropical */
+  --yellow: #F2C94C;      /* mango / flamboyán amarillo */
+  --blue: #1B4F72;        /* cielo caribeño profundo */
+  --green: #2D6A4F;       /* ceiba / monte verde */
+  --white: #FAF6EF;       /* cal blanqueada */
+  --cream: #F0E6C8;       /* madera vieja / bohío */
+  --gold: #E8A020;        /* sol de mediodía PR */
+  --gray: #9B8E7A;        /* tierra seca */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -58,7 +62,7 @@ section {
 #s1::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, rgba(196,30,58,0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 40% 60%, rgba(232,64,42,0.2) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(212,71,122,0.15) 0%, transparent 50%), radial-gradient(ellipse at 20% 80%, rgba(45,106,79,0.1) 0%, transparent 40%);
 }
 #s1 .flag-stripe {
   display: flex; gap: 6px; margin-bottom: 48px; justify-content: center;
@@ -77,8 +81,8 @@ section {
   line-height: 0.9;
   letter-spacing: -2px;
 }
-#s1 h1 .red { color: var(--red); }
-#s1 h1 .amp { color: var(--gold); font-style: italic; }
+#s1 h1 .red { color: var(--pink); }
+#s1 h1 .amp { color: var(--yellow); font-style: italic; }
 #s1 .subtitle {
   margin-top: 24px;
   font-size: 14px; letter-spacing: 4px; color: var(--gray); text-transform: uppercase;
@@ -93,7 +97,7 @@ section {
 }
 #s1 .meta-item { text-align: center; }
 #s1 .meta-num {
-  font-family: 'Fraunces', serif; font-size: 48px; font-weight: 900; color: var(--red);
+  font-family: 'Fraunces', serif; font-size: 48px; font-weight: 900; color: var(--yellow);
 }
 #s1 .meta-label { font-size: 11px; letter-spacing: 2px; color: var(--gray); text-transform: uppercase; margin-top: 4px; }
 
@@ -103,7 +107,7 @@ section {
 }
 .eyebrow {
   font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
-  color: var(--red); margin-bottom: 16px;
+  color: var(--yellow); margin-bottom: 16px;
 }
 .slide-header h2 {
   font-family: 'Fraunces', serif;
@@ -112,7 +116,7 @@ section {
   color: var(--cream);
 }
 .divider {
-  width: 60px; height: 3px; background: var(--red);
+  width: 60px; height: 3px; background: linear-gradient(90deg, var(--red), var(--yellow));
   margin: 32px 0;
 }
 
@@ -123,12 +127,12 @@ section {
 
 /* CARDS */
 .card {
-  background: rgba(255,255,255,0.04);
+  background: rgba(240,230,200,0.05);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
   padding: 32px;
 }
-.card.accent { border-left: 3px solid var(--red); }
+.card.accent { border-left: 3px solid var(--pink); }
 .card h3 {
   font-family: 'Fraunces', serif; font-size: 22px;
   color: var(--cream); margin-bottom: 12px;
@@ -136,8 +140,8 @@ section {
 .card p { font-size: 15px; line-height: 1.7; color: var(--gray); }
 .card .tag-pill {
   display: inline-block; padding: 4px 12px; border-radius: 20px;
-  background: rgba(196,30,58,0.15); border: 1px solid rgba(196,30,58,0.3);
-  font-size: 11px; letter-spacing: 2px; color: var(--red);
+  background: rgba(212,71,122,0.15); border: 1px solid rgba(212,71,122,0.4);
+  font-size: 11px; letter-spacing: 2px; color: var(--pink);
   text-transform: uppercase; margin-bottom: 16px;
 }
 
@@ -147,7 +151,7 @@ section {
   font-size: clamp(36px, 5vw, 72px); font-weight: 700;
   line-height: 1.1; color: var(--cream);
 }
-.big-quote .highlight { color: var(--red); }
+.big-quote .highlight { color: var(--pink); }
 
 /* PILLS */
 .pill-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
@@ -156,7 +160,7 @@ section {
   border: 1px solid rgba(255,255,255,0.15);
   font-size: 13px; color: var(--cream); letter-spacing: 1px;
 }
-.pill.red { border-color: var(--red); color: var(--red); background: rgba(196,30,58,0.1); }
+.pill.red { border-color: var(--pink); color: var(--pink); background: rgba(212,71,122,0.1); }
 
 /* TABLE */
 .table { width: 100%; border-collapse: collapse; margin-top: 24px; }
@@ -201,7 +205,7 @@ section {
   padding: 4px 10px; border-radius: 20px; flex-shrink: 0;
   text-transform: uppercase;
 }
-.tier-1 { background: rgba(212,168,83,0.15); color: var(--gold); border: 1px solid rgba(212,168,83,0.3); }
+.tier-1 { background: rgba(242,201,76,0.15); color: var(--yellow); border: 1px solid rgba(242,201,76,0.4); }
 .tier-2 { background: rgba(196,30,58,0.15); color: var(--red); border: 1px solid rgba(196,30,58,0.3); }
 .s-name { font-family: 'Fraunces', serif; font-size: 20px; color: var(--cream); }
 .s-pitch { font-size: 13px; color: var(--gray); margin-top: 4px; line-height: 1.5; }
@@ -229,7 +233,7 @@ section {
 
 /* FOOTER SLIDE */
 #s19 {
-  background: linear-gradient(135deg, var(--dark) 0%, #12021A 100%);
+  background: linear-gradient(135deg, var(--dark) 0%, #0A1208 50%, #0D0808 100%);
   text-align: center; flex-direction: column;
 }
 #s19::before {
@@ -316,7 +320,7 @@ section {
 </section>
 
 <!-- SLIDE 3: BRAND POSITIONING -->
-<section id="s3" style="background:rgba(196,30,58,0.05)">
+<section id="s3" style="background:linear-gradient(135deg, rgba(212,71,122,0.08) 0%, rgba(242,201,76,0.06) 100%)">
   <span class="slide-num">03 / 19</span>
   <div style="max-width:1100px;width:100%;text-align:center">
     <p class="eyebrow">Brand Positioning</p>
@@ -350,20 +354,20 @@ section {
         </p>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
           <div style="text-align:center">
-            <div style="width:80px;height:80px;border-radius:10px;background:#0A0A12;border:1px solid rgba(255,255,255,0.2)"></div>
-            <p style="font-size:11px;color:var(--gray);margin-top:8px">#0A0A12<br>Dark</p>
+            <div style="width:80px;height:80px;border-radius:10px;background:#0E0B08;border:1px solid rgba(255,255,255,0.2)"></div>
+            <p style="font-size:11px;color:var(--gray);margin-top:8px">#0E0B08<br>Tierra</p>
           </div>
           <div style="text-align:center">
-            <div style="width:80px;height:80px;border-radius:10px;background:#C41E3A"></div>
-            <p style="font-size:11px;color:var(--gray);margin-top:8px">#C41E3A<br>Red</p>
+            <div style="width:80px;height:80px;border-radius:10px;background:#E8402A"></div>
+            <p style="font-size:11px;color:var(--gray);margin-top:8px">#E8402A<br>Flamboyan</p>
           </div>
           <div style="text-align:center">
-            <div style="width:80px;height:80px;border-radius:10px;background:#1E3A5F"></div>
-            <p style="font-size:11px;color:var(--gray);margin-top:8px">#1E3A5F<br>Blue</p>
+            <div style="width:80px;height:80px;border-radius:10px;background:#D4477A"></div>
+            <p style="font-size:11px;color:var(--gray);margin-top:8px">#D4477A<br>Casita Pink</p>
           </div>
           <div style="text-align:center">
-            <div style="width:80px;height:80px;border-radius:10px;background:#D4A853"></div>
-            <p style="font-size:11px;color:var(--gray);margin-top:8px">#D4A853<br>Gold</p>
+            <div style="width:80px;height:80px;border-radius:10px;background:#F2C94C"></div>
+            <p style="font-size:11px;color:var(--gray);margin-top:8px">#F2C94C<br>Mango Yellow</p>
           </div>
           <div style="text-align:center">
             <div style="width:80px;height:80px;border-radius:10px;background:#F5F0E8;border:1px solid rgba(255,255,255,0.1)"></div>
@@ -395,7 +399,7 @@ section {
 </section>
 
 <!-- SLIDE 5: CONTENT PILLARS -->
-<section id="s5" style="background:rgba(30,58,95,0.1)">
+<section id="s5" style="background:linear-gradient(180deg, rgba(45,106,79,0.08) 0%, rgba(14,11,8,1) 100%)">
   <span class="slide-num">05 / 19</span>
   <div class="slide-header">
     <p class="eyebrow">Content Strategy</p>
@@ -480,7 +484,7 @@ section {
 </section>
 
 <!-- SLIDE 7: 3-WEEK PLAN -->
-<section id="s7" style="background:rgba(196,30,58,0.05)">
+<section id="s7" style="background:linear-gradient(135deg, rgba(242,201,76,0.05) 0%, rgba(212,71,122,0.05) 100%)">
   <span class="slide-num">07 / 19</span>
   <div class="slide-header">
     <p class="eyebrow">Launch Plan</p>
@@ -572,7 +576,7 @@ section {
 </section>
 
 <!-- SLIDE 9: FESTIVAL STRATEGY -->
-<section id="s9" style="background:rgba(30,58,95,0.1)">
+<section id="s9" style="background:linear-gradient(180deg, rgba(45,106,79,0.1) 0%, rgba(14,11,8,1) 100%)">
   <span class="slide-num">09 / 19</span>
   <div class="slide-header">
     <p class="eyebrow">Festival Circuit</p>
@@ -775,7 +779,7 @@ section {
 </section>
 
 <!-- SLIDE 13: MEDIA OUTREACH -->
-<section id="s13" style="background:rgba(30,58,95,0.1)">
+<section id="s13" style="background:linear-gradient(135deg, rgba(27,79,114,0.12) 0%, rgba(14,11,8,1) 100%)">
   <span class="slide-num">13 / 19</span>
   <div class="slide-header">
     <p class="eyebrow">Press Strategy</p>
@@ -928,7 +932,7 @@ section {
 </section>
 
 <!-- SLIDE 17: FRANCHISE VISION -->
-<section id="s17" style="background:rgba(212,168,83,0.05)">
+<section id="s17" style="background:linear-gradient(135deg, rgba(242,201,76,0.06) 0%, rgba(212,71,122,0.04) 100%)">
   <span class="slide-num">17 / 19</span>
   <div style="max-width:1100px;width:100%;text-align:center">
     <p class="eyebrow">Long-Term Vision</p>
