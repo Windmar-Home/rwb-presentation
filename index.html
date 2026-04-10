@@ -252,6 +252,23 @@ section {
 /* DARK ALT */
 .dark-alt { background: rgba(30,58,95,0.15); }
 
+/* PUERTO RICO FLAG TEXT */
+.boricua-flag {
+  background: linear-gradient(
+    135deg,
+    #CE1126 0%, #CE1126 20%,
+    #FFFFFF 20%, #FFFFFF 35%,
+    #CE1126 35%, #CE1126 50%,
+    #FFFFFF 50%, #FFFFFF 65%,
+    #CE1126 65%, #CE1126 80%,
+    #0A6ED1 80%, #0A6ED1 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 8px rgba(206,17,38,0.4));
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   nav { padding: 16px 24px; }
@@ -278,7 +295,7 @@ section {
   <h1>
     <span style="color:var(--red)">RED</span><br>
     WHITE<br>
-    <span class="amp">&</span> BORICUA
+    <span class="amp">&</span> <span class="boricua-flag">BORICUA</span>
   </h1>
   <p class="subtitle">Impacting America — Marketing Campaign 2026</p>
   <p class="tagline">"Criollo Chic & Sexy"</p>
